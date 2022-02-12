@@ -15,9 +15,6 @@ int main () {
     cout << "kPoints[" << i << "] = ";
     cout << kPoints[i] << endl;
   }
-  for (int i = 0; i < 5; i++) {
-    cout << GetPoints(i) << endl;
-  }
   GetPoints(1) = 20.23; // change 2nd element
   GetPoints(3) = 70.8;  // change 4th element
   cout << "Value after change" << endl;
