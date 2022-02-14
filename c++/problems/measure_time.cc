@@ -40,7 +40,7 @@ int main(int argc, char* argv[]) {
   std::chrono::duration<double, std::milli> elapsedTime = endTime - startTime;
   std::cout << "Tiempo: " << elapsedTime.count() << " ms.\n";
 
-    std::cout << "Midiendo tiempo mediante función en línea:" << std::endl;
+  std::cout << "Midiendo tiempo mediante función en línea:" << std::endl;
   std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
   InlineFactorial(kNumberToCheck);
   auto end = std::chrono::high_resolution_clock::now();
