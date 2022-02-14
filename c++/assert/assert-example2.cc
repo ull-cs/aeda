@@ -21,7 +21,7 @@
 #include <assert.h>
 
 // uncomment next line to disable assert()
-#define NDEBUG 
+//#define NDEBUG 
  
 // Use (void) to silent unused warnings.
 #define assertm(exp, msg) assert(((void)msg, exp))
