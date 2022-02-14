@@ -21,7 +21,7 @@ void Usage(int argc, char *argv[]) {
   }
 }
 
-inline int Factorial(int n) {
+int Factorial(int n) {
   return (n < 2) ? 1 : n * Factorial(n-1);
 }
 

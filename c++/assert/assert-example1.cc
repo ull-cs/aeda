@@ -23,10 +23,11 @@
  */
 
 #include <iostream>
-#include <assert.h>
 
 // uncomment next line to disable assert()
-//#define NDEBUG 
+//#define NDEBUG // it must be above #include <assert.h>
+
+#include <assert.h>
 
 double MySqrt(double x) {
   assert(x >= 0);
