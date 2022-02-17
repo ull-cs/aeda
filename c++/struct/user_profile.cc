@@ -8,9 +8,9 @@ struct User {
 };
 
 void PrintUser(const User& user) {
-  std::cout << "Name=" << user.name;
-  std::cout << ", surname=" << user.surname;
-  std::cout << ", age= " << user.age;
+  std::cout << "Name=" << user.name << ", ";
+  std::cout << "surname=" << user.surname << ", ";
+  std::cout << "age= " << user.age;
   std::cout << std::endl;
 }
 
