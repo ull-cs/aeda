@@ -4,9 +4,8 @@ using namespace std;
 
 class Box {
  public:
-  static int objectCount;
   Box(double length = 2.0, double breadth = 2.0, double height = 2.0) {
-    cout <<"Constructor called." << endl;
+    cout << "Constructor called." << endl;
     length_ = length;
     breadth_ = breadth;
     height_ = height;
@@ -19,12 +18,13 @@ class Box {
     return objectCount;
   }
  private:
+  static int objectCount;
   double length_;
   double breadth_;
   double height_;
 };
 
-int Box::objectCount = 0;
+int Box::objectCount = 0; // initializing the static attribute
 
 int main(void) {
   cout << "Inital Stage Count: " << Box::getCount() << endl;
