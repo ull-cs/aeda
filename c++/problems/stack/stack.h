@@ -1,4 +1,4 @@
-#ifndef STACK_
+#ifndef STACK
 #define STACK
 
 #define MAX 1000

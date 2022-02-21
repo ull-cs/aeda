@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
-#include "stack.h"
+#include "priority_queue.h"
 
 using namespace std;
 
@@ -26,18 +26,18 @@ void Usage(int argc, char *argv[]) {
 int main(int argc, char* argv[]) {
   Usage(argc, argv);
   const int kElements = stoi(argv[1]);
-  Stack stack;
+  PriorityQueue queue;
   for (int i = 0; i < kElements; i++) {
-    const int randomNumber = rand() % 10 + 1;
-    if (stack.push(randomNumber)) {
-      cout << randomNumber << " has been pushed" << endl;
-    }
+    const int randomNumber = rand() % 100 + 1;
+    const int randomPriority = rand() % 10 + 1;
+    queue.enqueue(randomNumber, randomPriority);
+    cout << randomNumber << " with priority " << randomPriority << " has been queued" << endl;
   }
-  cout << "Elements present in stack: ";
-  while (!stack.isEmpty()) {
-    cout << stack.peek() << " ";
-    stack.pop();
+  cout << "Elements present in queue: " << endl;
+  while (!queue.isEmpty()) {
+    const int element = queue.peek();
+    cout << element << " has the highest priority" << endl;
+    queue.dequeue();
   }
-  cout << endl;
   return 0;
 }
