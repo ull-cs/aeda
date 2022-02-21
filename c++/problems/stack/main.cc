@@ -26,6 +26,7 @@ void Usage(int argc, char *argv[]) {
 int main(int argc, char* argv[]) {
   Usage(argc, argv);
   const int kElements = stoi(argv[1]);
+  srand(time(NULL));
   Stack stack;
   for (int i = 0; i < kElements; i++) {
     const int randomNumber = rand() % 10 + 1;
