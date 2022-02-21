@@ -4,7 +4,7 @@
 
 using namespace std;
 
-const std::string kHelpText = "Este programa toma como parámetro un número y crea una pila con dicho número de elementos para luego vaciarla";
+const std::string kHelpText = "Este programa toma como parámetro un número y crea una cola de prioridad con dicho número de elementos y prioridades aleatorias para luego vaciarla";
 
 void Usage(int argc, char *argv[]) {
   if (argc == 2) {
