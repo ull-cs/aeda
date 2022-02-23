@@ -9,9 +9,12 @@ void Swap(T& value1, T& value2) {
 }
 
 int main() {
-  int int1 = 6, int2 = 3;
-  float float1 = 7.2, float2 = 4.5;
-  char char1 = 'p', char2 = 'x';
+  int int1 = 6;
+  int int2 = 3;
+  float float1 = 7.2;
+  float float2 = 4.5;
+  char char1 = 'p';
+  char char2 = 'x';
   cout << "Before passing data to function template:" << endl;
   cout << "int1 = " << int1 << ", int2 = " << int2 << endl;
   cout << "float1 = " << float1 << ", float2 = " << float2 << endl;
