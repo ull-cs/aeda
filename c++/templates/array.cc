@@ -5,7 +5,7 @@ using namespace std;
 template <typename T>
 class Array {
  public:
-  Array(T data[], int size);
+  Array(T[], int);
   void Print();
  private:
   T *data_;
