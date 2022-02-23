@@ -16,9 +16,9 @@ int main() {
   cout << "int1 = " << int1 << ", int2 = " << int2 << endl;
   cout << "float1 = " << float1 << ", float2 = " << float2 << endl;
   cout << "char1 = " << char1 << ", char2 = " << char2 << endl;
-  Swap(int1, int2);
-  Swap(float1, float2);
-  Swap(char1, char2);
+  Swap<int>(int1, int2);
+  Swap<float>(float1, float2);
+  Swap<char>(char1, char2);
   cout << "After passing data to function template:" << endl;
   cout << "int1 = " << int1 << ", int2 = " << int2 << endl;
   cout << "float1 = " << float1 << ", float2 = " << float2 << endl;
