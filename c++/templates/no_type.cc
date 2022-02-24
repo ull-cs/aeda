@@ -7,7 +7,7 @@ class StaticArray {
   T* GetData();
   void Print();
  private:
-  T data_[size] {};
+  T data_[size];
 };
 
 template <typename T, int size>
