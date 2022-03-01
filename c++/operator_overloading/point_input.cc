@@ -2,7 +2,7 @@
  * Universidad de La Laguna
  * Escuela Superior de Ingeniería y Tecnología
  * Grado en Ingeniería Informática
- * Informática Básica
+ * Algoritmos y Estructuras de Datos Avanzadas
  *
  * @author Christopher Expósito-Izquierdo
  * @date 1 Marzo 2022
