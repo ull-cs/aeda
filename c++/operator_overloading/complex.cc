@@ -28,4 +28,5 @@ int main()
     Complex c1(10, 5), c2(2, 4);
     Complex c3 = c1 + c2;
     c3.print();
+    return 0;
 }
