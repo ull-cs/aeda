@@ -2,10 +2,10 @@
  * Universidad de La Laguna
  * Escuela Superior de Ingeniería y Tecnología
  * Grado en Ingeniería Informática
- * Informática Básica
+ * Algoritmos y Estructuras de Datos Avanzadas
  *
- * @author F. de Sande
- * @date 10 Dec 2020
+ * @author Christopher Expósito-Izquierdo
+ * @date 3 March 2022
  * @brief Overloading of arithmetic operators. Client code
  */
 

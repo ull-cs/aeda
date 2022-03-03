@@ -1,13 +1,3 @@
-# Universidad de La Laguna
-# Escuela Superior de Ingeniería y Tecnología
-# Grado en Ingeniería Informática
-# Informática Básica
-#
-# @author F. de Sande
-# @date 10 Dec 2020
-# @brief A Makefile for the Cents class code
-# 
-
 CXX = g++						                             # The C++ compiler command
 CXXFLAGS = -std=c++17 -Wall -pedantic -Weffc++ 	 # The C++ compiler options (C++14, preserve debug symbols and warn all)
 LDFLAGS =						                             # The linker options (if any)
