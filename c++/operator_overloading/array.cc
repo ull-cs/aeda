@@ -4,48 +4,46 @@
 using namespace std;
 
 class Array {
-public:
-	Array(int*, int);
-	int& operator[](int);
-	void print() const;
+ public:
+  Array(int*, int);
+  int& operator[](int);
+  void Print() const;
  private:
-	int* ptr;
-	int size;
+  int* ptr;
+  int size;
 };
 
-int& Array::operator[](int index)
-{
-	if (index >= size) {
-		cout << "Array index out of bound, exiting";
-		exit(0);
-	}
-	return ptr[index];
+Array::Array(int* p = NULL, int size = 0) {
+  this->size = size;
+  ptr = NULL;
+  if (size != 0) {
+    ptr = new int[size];
+    for (int i = 0; i < size; i++) {
+      ptr[i] = p[i];
+    }
+  }
 }
 
-Array::Array(int* p = NULL, int s = 0)
-{
-	size = s;
-	ptr = NULL;
-	if (s != 0) {
-		ptr = new int[s];
-		for (int i = 0; i < s; i++)
-			ptr[i] = p[i];
-	}
+int& Array::operator[](int index) {
+  if (index >= size) {
+    cout << "Array index out of bound, exiting";
+	exit(0);
+  }
+  return ptr[index];
 }
 
-void Array::print() const
-{
-	for (int i = 0; i < size; i++)
-		cout << ptr[i] << " ";
-	cout << endl;
+void Array::Print() const {
+  for (int i = 0; i < size; i++) {
+    cout << ptr[i] << " ";
+  }
+  cout << endl;
 }
 
-int main()
-{
-	int a[] = { 1, 2, 4, 5 };
-	Array arr1(a, 4);
-	arr1[2] = 6;
-	arr1.print();
-	arr1[8] = 6;
-	return 0;
+int main() {
+  int data[] = { 1, 2, 4, 5 };
+  Array array(data, 4);
+  array[2] = 6;
+  array.Print();
+  array[8] = 6;
+  return 0;
 }
