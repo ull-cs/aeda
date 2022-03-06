@@ -4,15 +4,16 @@
 template <class T>
 class Pair {
  public:
-  Pair() { }
+  Pair() {}
   Pair(T first, T second) {
     element1_ = first;
     element2_ = second;
   }
   T GetMax();
-  template<class U>
-  friend std::ostream& operator<<( std::ostream& out, const Pair<U>& pair);
- private:    
+  template <class U>
+  friend std::ostream& operator<<(std::ostream& out, const Pair<U>& pair);
+
+ private:
   T element1_;
   T element2_;
 };

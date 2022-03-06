@@ -13,6 +13,7 @@ class PriorityQueue {
   void dequeue();
   bool isEmpty();
   int getSize();
+
  private:
   int size;
   queue_element elements[MAX];

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-PriorityQueue::PriorityQueue() { 
+PriorityQueue::PriorityQueue() {
   size = 0;
 }
 
@@ -11,7 +11,7 @@ void PriorityQueue::enqueue(int value, int priority) {
   elements[size].value = value;
   elements[size].priority = priority;
 }
- 
+
 int PriorityQueue::peek() {
   const int index = indexElementWithHighestPriority();
   return elements[index].value;
@@ -38,8 +38,8 @@ int PriorityQueue::indexElementWithHighestPriority() {
   int index = -1;
   for (int i = 0; i <= size; i++) {
     if (highestPriority == elements[i].priority && index > -1 && elements[index].value < elements[i].value) {
-        highestPriority = elements[i].priority;
-        index = i;
+      highestPriority = elements[i].priority;
+      index = i;
     } else if (highestPriority < elements[i].priority) {
       highestPriority = elements[i].priority;
       index = i;

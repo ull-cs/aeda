@@ -1,7 +1,7 @@
 #ifndef NODE
 #define NODE
 
-template<typename T>
+template <typename T>
 class Node {
  public:
   Node() {
@@ -14,7 +14,8 @@ class Node {
  private:
   T data;
   Node<T>* next;
-  template<typename U>friend class AssociationList;  
+  template <typename U>
+  friend class AssociationList;
 };
 
 #endif

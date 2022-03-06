@@ -11,8 +11,7 @@ void Usage(int argc, char *argv[]) {
       std::cout << kHelpText << std::endl;
       exit(EXIT_FAILURE);
     }
-  } 
-  else {
+  } else {
     std::cout << "El programa requiere un parámetro." << std::endl;
     std::cout << "Modo de uso:" << std::endl;
     std::cout << argv[0] << " NUMEROS" << std::endl;
@@ -21,7 +20,7 @@ void Usage(int argc, char *argv[]) {
   }
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
   Usage(argc, argv);
   int numberOfElements = std::stoi(argv[1]);
   int *numbers = new int[numberOfElements];

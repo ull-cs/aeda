@@ -1,5 +1,7 @@
-#include <iostream>
 #include <stdlib.h>
+
+#include <iostream>
+
 #include "queue.h"
 
 using namespace std;
@@ -13,8 +15,7 @@ void Usage(int argc, char *argv[]) {
       std::cout << kHelpText << std::endl;
       exit(EXIT_FAILURE);
     }
-  } 
-  else {
+  } else {
     std::cout << "El programa requiere un parámetro." << std::endl;
     std::cout << "Modo de uso:" << std::endl;
     std::cout << argv[0] << " NUMERO" << std::endl;
@@ -23,8 +24,7 @@ void Usage(int argc, char *argv[]) {
   }
 }
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
   Usage(argc, argv);
   const int kElements = stoi(argv[1]);
   srand(time(NULL));

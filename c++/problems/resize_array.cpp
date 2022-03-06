@@ -23,7 +23,7 @@ using namespace std;
 
 int main() {
   int array_size = 40;
-  int * array = new int[array_size];
+  int* array = new int[array_size];
   for (int i = 0; i < array_size; i++) {
     array[i] = i * i;
   }

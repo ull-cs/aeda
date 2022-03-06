@@ -18,11 +18,12 @@ class Deque {
   bool isEmpty();
   int getFront();
   int getRear();
+
  private:
   int elements[MAX];
   int front;
   int rear;
-  int size;  
+  int size;
 };
 
 #endif

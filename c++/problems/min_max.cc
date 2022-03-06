@@ -1,19 +1,19 @@
-#include <iostream>
 #include <stdlib.h>
+
+#include <iostream>
 
 using namespace std;
 
 const std::string kHelpText = "Este programa toma como parámetro un número y crea arrays de diferente tipo. Luego muestra el valor mínimo y máximo de cada array";
 
-void Usage(int argc, char *argv[]) {
+void Usage(int argc, char* argv[]) {
   if (argc == 2) {
     std::string parameter{argv[1]};
     if (parameter == "--help") {
       std::cout << kHelpText << std::endl;
       exit(EXIT_FAILURE);
     }
-  } 
-  else {
+  } else {
     std::cout << "El programa requiere un parámetro." << std::endl;
     std::cout << "Modo de uso:" << std::endl;
     std::cout << argv[0] << " NUMERO" << std::endl;
@@ -22,7 +22,7 @@ void Usage(int argc, char *argv[]) {
   }
 }
 
-template<class T> 
+template <class T>
 T Maximum(const T* data, int size) {
   T result = data[0];
   for (int i = 1; i < size; i++) {
@@ -33,7 +33,7 @@ T Maximum(const T* data, int size) {
   return result;
 }
 
-template<class T> 
+template <class T>
 T Minimum(const T* data, int size) {
   T result = data[0];
   for (int i = 1; i < size; i++) {
@@ -41,10 +41,10 @@ T Minimum(const T* data, int size) {
       result = data[i];
     }
   }
-  return result;  
+  return result;
 }
 
-template<class T> 
+template <class T>
 void Print(const T* data, int size) {
   for (int i = 0; i < size; i++) {
     cout << data[i] << " ";
@@ -70,9 +70,9 @@ int main(int argc, char* argv[]) {
   Print(numbers, kElements);
   cout << "Array of char: ";
   Print(arrayChar, kElements);
-  cout << "Minimum double is " << Minimum(data, kElements) << endl; 
-  cout << "Maximum double is " << Maximum(data, kElements) << endl; 
-  cout << "Minimum integer is " << Minimum(numbers, kElements) << endl; 
+  cout << "Minimum double is " << Minimum(data, kElements) << endl;
+  cout << "Maximum double is " << Maximum(data, kElements) << endl;
+  cout << "Minimum integer is " << Minimum(numbers, kElements) << endl;
   cout << "Maximum integer is " << Maximum(numbers, kElements) << endl;
   return 0;
 }
