@@ -2,58 +2,51 @@
 
 using namespace std;
 
-bool areBracketsBalanced(string expr) {
-  stack<char> s;
-  char x;
-  // Traversing the Expression
-  for (int i = 0; i < expr.length(); i++) {
-    if (expr[i] == '(' || expr[i] == '[' || expr[i] == '{') {
-      // Push the element in the stack
-      s.push(expr[i]);
+bool areBracketsBalanced(string expression) {
+  stack<char> stack;
+  char toCheck;
+  for (int i = 0; i < expression.length(); i++) {
+	char character = expression[i];
+    if (character == '(' || character == '[' || character == '{') {
+      stack.push(character);
       continue;
     }
-    // IF current current character is not opening
-    // bracket, then it must be closing. So stack
-    // cannot be empty at this point.
-    if (s.empty())
+    if (stack.empty()) {
       return false;
-
-    switch (expr[i]) {
+    }
+    switch (character) {
       case ')':
-
-        // Store the top element in a
-        x = s.top();
-        s.pop();
-        if (x == '{' || x == '[')
+        toCheck = stack.top();
+        stack.pop();
+        if (toCheck == '{' || toCheck == '[') {
           return false;
+		}
         break;
-
       case '}':
-        // Store the top element in b
-        x = s.top();
-        s.pop();
-        if (x == '(' || x == '[')
+        toCheck = stack.top();
+        stack.pop();
+        if (toCheck == '(' || toCheck == '[') {
           return false;
+		}
         break;
       case ']':
-        // Store the top element in c
-        x = s.top();
-        s.pop();
-        if (x == '(' || x == '{')
+        toCheck = stack.top();
+        stack.pop();
+        if (toCheck == '(' || toCheck == '{') {
           return false;
+		}
         break;
     }
   }
-  return (s.empty());
+  return (stack.empty());
 }
 
-int main() {
-  string expr = "{()}[]";
-  // Function call
-  if (areBracketsBalanced(expr)) {
-    cout << "Balanced";
+int main(int argc, char *argv[]) {
+  const std::string expression = argv[1];
+  if (areBracketsBalanced(expression)) {
+    cout << "Expression is balanced" << endl;
   } else {
-    cout << "Not Balanced";
+    cout << "Expression is not balanced" << endl;
   }
   return 0;
 }
