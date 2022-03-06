@@ -11,28 +11,23 @@ class DisjointSet {
  private:
   int *rank;
   int *parent;
-  int n;
+  int size_;
 };
 
 DisjointSet::DisjointSet(int size) {
   rank = new int[size];
   parent = new int[size];
-  this->n = size;
-  for (int i = 0; i < n; i++) {
+  this->size_ = size;
+  for (int i = 0; i < size_; i++) {
     parent[i] = i;
   }
 }
 
-// Finds set of given item x
-int DisjointSet::find(int x) {
-  // Finds the representative of the set that x is an element of
-  if (parent[x] != x) {
-    // if x is not the parent of itself, then x is not the representative of his set
-    parent[x] = find(parent[x]);
-    // so we recursively call Find on its parent and move i's node directly under the
-    // representative of this set
+int DisjointSet::find(int toFind) {
+  if (parent[toFind] != toFind) {
+    parent[toFind] = find(parent[toFind]);
   }
-  return parent[x];
+  return parent[toFind];
 }
 
 // Do union of two sets represented by x and y.
@@ -57,20 +52,20 @@ void DisjointSet::Union(int x, int y) {
   }
 }
 
-int main() {
-  DisjointSet obj(5);
-  obj.Union(0, 2);
-  obj.Union(4, 2);
-  obj.Union(3, 1);
-  if (obj.find(4) == obj.find(0)) {
-    cout << "Yes\n";
+int main(int argc, char* argv[]) {
+  DisjointSet disjointSet(5);
+  disjointSet.Union(0, 2);
+  disjointSet.Union(4, 2);
+  disjointSet.Union(3, 1);
+  if (disjointSet.find(4) == disjointSet.find(0)) {
+    cout << "Yes" << endl;
   } else {
-    cout << "No\n";
+    cout << "No" << endl;
   }
-  if (obj.find(1) == obj.find(0)) {
-    cout << "Yes\n";
+  if (disjointSet.find(1) == disjointSet.find(0)) {
+    cout << "Yes" << endl;
   } else {
-    cout << "No\n";
+    cout << "No" << endl;
   }
   return 0;
 }

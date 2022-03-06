@@ -1,6 +1,5 @@
-#include <stdlib.h>
-
 #include <iostream>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -9,8 +8,9 @@ class Stack {
   Stack();
   bool isEmpty();
   bool isFull();
+  int peek();
   int pop();
-  void push(int x);
+  void push(int toInsert);
 
  private:
   static const int max = 100;
@@ -36,25 +36,33 @@ bool Stack::isFull() {
   return false;
 }
 
+int Stack::peek() {
+  if (top < 0) {
+    return 0;
+  } else {
+    return data[top];
+  }
+}
+
 /* Stack's member method to remove an element from it */
 int Stack::pop() {
   if (isEmpty()) {
     cout << "Stack Underflow";
     abort();
   }
-  int x = data[top];
+  int element = data[top];
   top--;
-  return x;
+  return element;
 }
 
 /* Stack's member method to insert an element to it */
-void Stack::push(int x) {
+void Stack::push(int toInsert) {
   if (isFull()) {
     cout << "Stack Overflow";
     abort();
   }
   top++;
-  data[top] = x;
+  data[top] = toInsert;
 }
 
 /* A class that supports all the stack
@@ -64,7 +72,7 @@ the stack class and uses an auxiliary stack that holds minimum elements */
 class SpecialStack : public Stack {
  public:
   int pop();
-  void push(int x);
+  void push(int toInsert);
   int getMin();
 
  private:
@@ -74,16 +82,16 @@ class SpecialStack : public Stack {
 /* SpecialStack's member method to insert
 an element to it. This method makes sure that the min stack is also
 updated with appropriate minimum values */
-void SpecialStack::push(int x) {
+void SpecialStack::push(int toInsert) {
   if (isEmpty()) {
-    Stack::push(x);
-    min.push(x);
+    Stack::push(toInsert);
+    min.push(toInsert);
   } else {
-    Stack::push(x);
+    Stack::push(toInsert);
     int y = min.pop();
     min.push(y);
-    if (x < y) {
-      min.push(x);
+    if (toInsert < y) {
+      min.push(toInsert);
     }
     else {
       min.push(y);
@@ -94,25 +102,32 @@ void SpecialStack::push(int x) {
 /* SpecialStack's member method to remove an element from it. This method
 removes top element from min stack also. */
 int SpecialStack::pop() {
-  int x = Stack::pop();
+  int element = Stack::pop();
   min.pop();
-  return x;
+  return element;
 }
 
 /* SpecialStack's member method to get minimum element from it. */
 int SpecialStack::getMin() {
-  int x = min.pop();
-  min.push(x);
-  return x;
+  int element = min.pop();
+  min.push(element);
+  return element;
 }
 
-int main() {
-  SpecialStack s;
-  s.push(10);
-  s.push(20);
-  s.push(30);
-  cout << s.getMin() << endl;
-  s.push(5);
-  cout << s.getMin() << endl;
+int main(int argc, char* argv[]) {
+  const int kElements = stoi(argv[1]);
+  srand(time(NULL));
+  SpecialStack stack;
+  for (int i = 0; i < kElements; i++) {
+    const int randomNumber = rand() % 10 + 1;
+    stack.push(randomNumber);
+    cout << randomNumber << " has been pushed" << endl;
+  }
+  cout << "Elements present in stack: ";
+  while (!stack.isEmpty()) {
+    cout << stack.peek() << " (min=" << stack.getMin() << ") ";
+    stack.pop();
+  }
+  cout << endl;
   return 0;
 }

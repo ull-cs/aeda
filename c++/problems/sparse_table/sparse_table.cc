@@ -52,7 +52,6 @@ int query(int L, int R) {
     return lookup[R - (1 << j) + 1][j];
 }
 
-// Driver program
 int main() {
   int a[] = {7, 2, 3, 0, 5, 10, 3, 12, 18};
   int n = sizeof(a) / sizeof(a[0]);
