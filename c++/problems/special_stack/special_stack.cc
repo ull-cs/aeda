@@ -45,7 +45,6 @@ int Stack::peek() {
   }
 }
 
-/* Stack's member method to remove an element from it */
 int Stack::pop() {
   if (isEmpty()) {
     cout << "Stack Underflow";
@@ -56,7 +55,6 @@ int Stack::pop() {
   return element;
 }
 
-/* Stack's member method to insert an element to it */
 void Stack::push(int toInsert) {
   if (isFull()) {
     cout << "Stack Overflow";
@@ -66,10 +64,6 @@ void Stack::push(int toInsert) {
   data[top] = toInsert;
 }
 
-/* A class that supports all the stack
-operations and one additional operation getMin() that returns the
-minimum element from stack at any time. This class inherits from
-the stack class and uses an auxiliary stack that holds minimum elements */
 class SpecialStack : public Stack {
  public:
   int pop();
@@ -80,9 +74,6 @@ class SpecialStack : public Stack {
   Stack min;
 };
 
-/* SpecialStack's member method to insert
-an element to it. This method makes sure that the min stack is also
-updated with appropriate minimum values */
 void SpecialStack::push(int toInsert) {
   if (isEmpty()) {
     Stack::push(toInsert);
@@ -99,15 +90,12 @@ void SpecialStack::push(int toInsert) {
   }
 }
 
-/* SpecialStack's member method to remove an element from it. This method
-removes top element from min stack also. */
 int SpecialStack::pop() {
   int element = Stack::pop();
   min.pop();
   return element;
 }
 
-/* SpecialStack's member method to get minimum element from it. */
 int SpecialStack::getMin() {
   int element = min.pop();
   min.push(element);
