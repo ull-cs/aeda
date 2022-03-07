@@ -4,14 +4,14 @@
 class Person {
  public:
   Person(const std::string& name = "", int age = 0)
-      : m_name{name}, m_age{age} {
+      : name_{name}, age_{age} {
   }
-  const std::string& getName() const { return m_name; }
-  int getAge() const { return m_age; }
+  const std::string& getName() const { return name_; }
+  int getAge() const { return age_; }
 
  private:
-  std::string m_name;
-  int m_age{};
+  std::string name_;
+  int age_{};
 };
 
 class BaseballPlayer : public Person {
@@ -19,16 +19,16 @@ class BaseballPlayer : public Person {
   BaseballPlayer(const std::string& name = "", int age = 0,
                  double battingAverage = 0.0, int homeRuns = 0)
       : Person{name, age},  // call Person(const std::string&, int) to initialize these fields
-        m_battingAverage{battingAverage},
-        m_homeRuns{homeRuns} {
+        battingAverage_{battingAverage},
+        homeRuns_{homeRuns} {
   }
 
-  double getBattingAverage() const { return m_battingAverage; }
-  int getHomeRuns() const { return m_homeRuns; }
+  double getBattingAverage() const { return battingAverage_; }
+  int getHomeRuns() const { return homeRuns_; }
 
  private:
-  double m_battingAverage{};
-  int m_homeRuns{};
+  double battingAverage_{};
+  int homeRuns_{};
 };
 
 int main() {
