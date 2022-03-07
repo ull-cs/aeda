@@ -20,6 +20,7 @@ DisjointSet::DisjointSet(int size) {
   this->size_ = size;
   for (int i = 0; i < size_; i++) {
     parent[i] = i;
+    rank[i] = 0;
   }
 }
 
@@ -32,10 +33,8 @@ int DisjointSet::find(int toFind) {
 
 // Do union of two sets represented by x and y.
 void DisjointSet::Union(int x, int y) {
-  // Find current sets of x and y
   int xset = find(x);
   int yset = find(y);
-  // If they are already in same set
   if (xset == yset) {
     return;
   }
@@ -55,17 +54,20 @@ void DisjointSet::Union(int x, int y) {
 int main(int argc, char *argv[]) {
   DisjointSet disjointSet(5);
   disjointSet.Union(0, 2);
+  cout << "Elements 0 and 2 are included into the same set." << endl;
   disjointSet.Union(4, 2);
+  cout << "Elements 4 and 2 are included into the same set." << endl;
   disjointSet.Union(3, 1);
+  cout << "Elements 3 and 1 are included into the same set." << endl;
   if (disjointSet.find(4) == disjointSet.find(0)) {
-    cout << "Yes" << endl;
+    cout << "Elements 4 and 0 belongs to the same set." << endl;
   } else {
-    cout << "No" << endl;
+    cout << "Elements 4 and 0 do not belong to the same set." << endl;
   }
   if (disjointSet.find(1) == disjointSet.find(0)) {
-    cout << "Yes" << endl;
+    cout << "Elements 1 and 0 belongs to the same set." << endl;
   } else {
-    cout << "No" << endl;
+    cout << "Elements 1 and 0 do not belong to the same set." << endl;
   }
   return 0;
 }
