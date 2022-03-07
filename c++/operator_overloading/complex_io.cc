@@ -2,8 +2,7 @@
 
 using namespace std;
 
-class Complex
-{
+class Complex {
 public:
     Complex(int r = 0, int i = 0)
     {
