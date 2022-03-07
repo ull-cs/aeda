@@ -11,6 +11,7 @@ class Node {
     this->data = data;
     this->next = NULL;
   }
+
  private:
   T data;
   Node<T>* next;

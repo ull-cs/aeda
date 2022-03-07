@@ -27,16 +27,16 @@ int main() {
   for (int i = 0; i < array_size; i++) {
     array[i] = i * i;
   }
-  //int array[] = { 1, 2, 3 };
+  // int array[] = { 1, 2, 3 };
   std::cout << sizeof(*array) << std::endl;
   std::cout << sizeof(array[0]) << std::endl;
   std::cout << sizeof(*array) / sizeof(int);
-  //int arrSize = std::size(array);
-  //cout << arrSize << endl;
+  // int arrSize = std::size(array);
+  // cout << arrSize << endl;
   return 0;
   /*******************************************
-  * Start Resizing the Array                *
-  *******************************************/
+   * Start Resizing the Array                *
+   *******************************************/
   /*// 1. we require a temporary pointer
   int * array_tmp = 0;
   // 2. allocate twice as much memory
@@ -55,12 +55,12 @@ int main() {
   // 7. update the size of the array
   array_size *= 2;*/
   /*******************************************
-  * Finish Resizing the Array               *
-  *******************************************/
+   * Finish Resizing the Array               *
+   *******************************************/
   // continue using the new array...
   /*for ( int i = array_size/2; i < array_size; ++i ) {
     array[i] = i*i;
-  } 
+  }
   cout << "The squares are:";
   for (int i = 0; i < array_size; i++) {
     cout << " " << array[i];

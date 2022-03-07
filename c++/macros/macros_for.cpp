@@ -1,7 +1,7 @@
 #include <iostream>
 
-#define FOR(A,B) for(A = 0 ; A < B ; A++)
- 
+#define FOR(A, B) for (A = 0; A < B; A++)
+
 int main() {
   int i;
   FOR(i, 5) {

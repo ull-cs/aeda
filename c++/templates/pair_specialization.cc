@@ -11,14 +11,15 @@ class Pair {
     element2_ = second;
   }
   T GetMax();
- private:    
+
+ private:
   T element1_;
   T element2_;
 };
 
 template <class T>
 T Pair<T>::GetMax() {
-  return (element1_ > element2_)? element1_ : element2_;
+  return (element1_ > element2_) ? element1_ : element2_;
 }
 
 template <>
@@ -36,16 +37,17 @@ class Pair<char> {
     result.push_back('}');
     return result;
   }
- private:    
+
+ private:
   char element1_;
   char element2_;
 };
 
-int main () {
+int main() {
   Pair<int> myPair(100, 75);
   cout << "Maximum: " << myPair.GetMax() << endl;
   Pair<char> charPair('a', 'b');
-  //cout << "Char pair: " << charPair.GetMax() << endl; // compilation error
+  // cout << "Char pair: " << charPair.GetMax() << endl; // compilation error
   cout << "Char pair: " << charPair.ToString() << endl;
   return 0;
 }

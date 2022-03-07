@@ -3,15 +3,17 @@
 using namespace std;
 
 class Base {
- private:
-  int private_ = 1;
- protected:
-  int protected_ = 2;
  public:
   int public_ = 3;
   int getPrivate() {
     return private_;
   }
+
+ protected:
+  int protected_ = 2;
+
+ private:
+  int private_ = 1;
 };
 
 class PublicDerived : public Base {

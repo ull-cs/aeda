@@ -3,9 +3,10 @@
 template <typename T, int size>
 class StaticArray {
  public:
-  T& operator[](int index); 
+  T& operator[](int index);
   T* GetData();
   void Print();
+
  private:
   T data_[size];
 };
@@ -20,7 +21,7 @@ T* StaticArray<T, size>::GetData() {
   return data_;
 }
 
-template <typename T, int size>  
+template <typename T, int size>
 void StaticArray<T, size>::Print() {
   for (int i{0}; i < size; i++) {
     std::cout << data_[i] << ' ';

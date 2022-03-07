@@ -8,12 +8,12 @@
  * @date 1 March 2022
  * @brief Overloading of arithmetic operators
  *        The Cents class hold an amount of cents (money)
- *        Overloading the plus operator (+) is as simple as: 
+ *        Overloading the plus operator (+) is as simple as:
  *         1. Declaring a function named operator+, giving it two parameters of the type of the operands we want to add
  *         2. Picking an appropriate return type
  *         3. Writing the function
  *        If you write a friend function, it can access the class members directly
- *        
+ *
  * @see https://www.learncpp.com/cpp-tutorial/92-overloading-the-arithmetic-operators-using-friend-functions/
  */
 
@@ -27,6 +27,7 @@ class Cents {
   // Subtract Cents - Cents using a friend function
   friend Cents operator-(const Cents& c1, const Cents& c2);
   int cents() const { return cents_; }
+
  private:
   int cents_;
 };
@@ -52,4 +53,3 @@ int main() {
   std::cout << "I have " << centsSum.cents() << " cents.\n";
   return 0;
 }
-

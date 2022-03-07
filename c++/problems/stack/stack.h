@@ -10,7 +10,8 @@ class Stack {
   int pop();
   int peek();
   bool isEmpty();
- private: 
+
+ private:
   int top;
   int elements[MAX];
 };

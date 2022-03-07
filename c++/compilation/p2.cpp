@@ -1,14 +1,15 @@
-#include <iostream>
 #include "p2.h"
+
+#include <iostream>
 
 using namespace std;
 
 static int f(int);
 
-int f(int x) { 
+int f(int x) {
   return x / 2;
 }
 
-void z(int i) { 
+void z(int i) {
   cout << f(i) << endl;
 }

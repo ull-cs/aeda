@@ -101,7 +101,8 @@ void AssociationList<T>::displayAll() {
     cout << temp->data << " | ";
     temp = temp->next;
   }
-  cout << endl << "--------------------------" << endl;
+  cout << endl
+       << "--------------------------" << endl;
 }
 
 template <typename T>

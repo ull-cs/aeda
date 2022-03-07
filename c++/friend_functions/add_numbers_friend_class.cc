@@ -7,6 +7,7 @@ class ClassB;
 class ClassA {
  public:
   ClassA() : numA_(12) {}
+
  private:
   int numA_;
   friend class ClassB;
@@ -18,6 +19,7 @@ class ClassB {
   int AddNumbers(ClassA objectA) {
     return (objectA.numA_ + numB_);
   }
+
  private:
   int numB_;
 };
@@ -28,4 +30,3 @@ int main() {
   cout << "Sum: " << objectB.AddNumbers(objectA) << endl;
   return 0;
 }
-

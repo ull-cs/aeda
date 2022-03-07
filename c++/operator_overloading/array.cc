@@ -8,6 +8,7 @@ class Array {
   Array(int*, int);
   int& operator[](int);
   void Print() const;
+
  private:
   int* ptr;
   int size;
@@ -27,7 +28,7 @@ Array::Array(int* p = NULL, int size = 0) {
 int& Array::operator[](int index) {
   if (index >= size) {
     cout << "Array index out of bound, exiting";
-	exit(0);
+    exit(0);
   }
   return ptr[index];
 }
@@ -40,7 +41,7 @@ void Array::Print() const {
 }
 
 int main() {
-  int data[] = { 1, 2, 4, 5 };
+  int data[] = {1, 2, 4, 5};
   Array array(data, 4);
   array[2] = 6;
   array.Print();

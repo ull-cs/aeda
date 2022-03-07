@@ -10,17 +10,18 @@ class Pair {
     element2_ = second;
   }
   T GetMax();
- private:    
+
+ private:
   T element1_;
   T element2_;
 };
 
 template <class T>
 T Pair<T>::GetMax() {
-  return (element1_ > element2_)? element1_ : element2_;
+  return (element1_ > element2_) ? element1_ : element2_;
 }
 
-int main () {
+int main() {
   Pair<int> myPair(100, 75);
   cout << "Maximum: " << myPair.GetMax() << endl;
   return 0;

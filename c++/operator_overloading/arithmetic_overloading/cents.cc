@@ -6,7 +6,7 @@
  *
  * @author Christopher Expósito-Izquierdo
  * @date 3 March 2022
- * @brief Overloading of arithmetic operators. 
+ * @brief Overloading of arithmetic operators.
  * @see https://www.learncpp.com/cpp-tutorial/9-2a-overloading-operators-using-normal-functions/
  */
 

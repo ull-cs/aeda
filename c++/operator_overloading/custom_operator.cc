@@ -16,8 +16,8 @@
  * @see https://en.cppreference.com/w/cpp/language/operators
  */
 
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 class Human {
@@ -26,13 +26,13 @@ class Human {
   bool operator<(const Human& other) const {
     return kindness_ < other.kindness_;
   }
+
  private:
   int kindness_ = 100;
 };
 
-int main () {
+int main() {
   std::vector<Human> humans = {Human{0}, Human{10}};
   std::sort(humans.begin(), humans.end());
   return 0;
 }
-

@@ -6,7 +6,7 @@ const std::string kHelpText = "Este programa toma como parámetro una cadena y c
  * Indica el modo correcto de uso del programa
  * El programa requiere dos nombres de ficheros pasados por línea de comandos
  *
- * @param argc Número de parámetros pasado por línea de comandos 
+ * @param argc Número de parámetros pasado por línea de comandos
  * @param argv Vector de punteros a caracter conteniendo los parámetros pasados
  */
 void Usage(int argc, char* argv[]) {

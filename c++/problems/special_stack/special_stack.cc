@@ -1,5 +1,6 @@
-#include <iostream>
 #include <stdlib.h>
+
+#include <iostream>
 
 using namespace std;
 
@@ -92,8 +93,7 @@ void SpecialStack::push(int toInsert) {
     min.push(y);
     if (toInsert < y) {
       min.push(toInsert);
-    }
-    else {
+    } else {
       min.push(y);
     }
   }

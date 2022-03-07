@@ -52,7 +52,7 @@ void DisjointSet::Union(int x, int y) {
   }
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
   DisjointSet disjointSet(5);
   disjointSet.Union(0, 2);
   disjointSet.Union(4, 2);

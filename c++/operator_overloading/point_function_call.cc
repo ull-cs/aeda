@@ -4,12 +4,13 @@ using namespace std;
 
 class Point {
  public:
-  Point() : x(0), y(0) { }
+  Point() : x(0), y(0) {}
   Point& operator()(int dx, int dy) {
     x += dx;
     y += dy;
     return *this;
   }
+
  private:
   int x;
   int y;

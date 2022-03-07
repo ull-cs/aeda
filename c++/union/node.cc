@@ -16,7 +16,7 @@ void PrintNode(const Node& node) {
   std::cout << "intType=" << node.value.intValue << ", ";
   std::cout << "doubleType=" << node.value.doubleValue << ", ";
   std::cout << "charValue=" << node.value.charValue;
-  std::cout << std::endl; 
+  std::cout << std::endl;
 }
 
 int main() {

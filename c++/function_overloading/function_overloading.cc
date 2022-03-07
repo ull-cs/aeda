@@ -18,9 +18,8 @@ void f(const int a, int b = 0) {
 
 int main() {
   f();
-//  f(3);
-  f(1, 2); // segunda f
-//  f(1);    // ¿a cuál de las dos se refiere?
+  //  f(3);
+  f(1, 2);     // segunda f
+  //  f(1);    // ¿a cuál de las dos se refiere?
   return 0;
 }
-

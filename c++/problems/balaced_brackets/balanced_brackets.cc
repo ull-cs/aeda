@@ -6,7 +6,7 @@ bool areBracketsBalanced(string expression) {
   stack<char> stack;
   char toCheck;
   for (int i = 0; i < expression.length(); i++) {
-	char character = expression[i];
+    char character = expression[i];
     if (character == '(' || character == '[' || character == '{') {
       stack.push(character);
       continue;
@@ -20,21 +20,21 @@ bool areBracketsBalanced(string expression) {
         stack.pop();
         if (toCheck == '{' || toCheck == '[') {
           return false;
-		}
+        }
         break;
       case '}':
         toCheck = stack.top();
         stack.pop();
         if (toCheck == '(' || toCheck == '[') {
           return false;
-		}
+        }
         break;
       case ']':
         toCheck = stack.top();
         stack.pop();
         if (toCheck == '(' || toCheck == '{') {
           return false;
-		}
+        }
         break;
     }
   }

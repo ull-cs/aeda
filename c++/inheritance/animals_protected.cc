@@ -6,7 +6,7 @@ using namespace std;
 class Animal {
  public:
   void eat() {
-   cout << "I can eat!" << endl;
+    cout << "I can eat!" << endl;
   }
   void sleep() {
     cout << "I can sleep!" << endl;
@@ -17,8 +17,10 @@ class Animal {
   string getColor() {
     return color;
   }
+
  protected:
   string type;
+
  private:
   string color;
 };
@@ -38,12 +40,12 @@ class Dog : public Animal {
 };
 
 int main() {
-    Dog dog1;
-    dog1.eat();
-    dog1.sleep();
-    dog1.setColor("black");
-    dog1.bark();
-    dog1.setType("mammal");
-    dog1.displayInfo(dog1.getColor());
-    return 0;
+  Dog dog1;
+  dog1.eat();
+  dog1.sleep();
+  dog1.setColor("black");
+  dog1.bark();
+  dog1.setType("mammal");
+  dog1.displayInfo(dog1.getColor());
+  return 0;
 }

@@ -3,16 +3,17 @@
 template <typename T, int size>
 class StaticArray {
  public:
-  T& operator[](int index); 
+  T& operator[](int index);
   T* GetData();
-  template<class U>
+  template <class U>
   void Print(U identifier) {
     std::cout << "Array " << identifier << ": ";
     for (int i{0}; i < size; i++) {
-    std::cout << data_[i] << ' ';
+      std::cout << data_[i] << ' ';
     }
     std::cout << std::endl;
   }
+
  private:
   T data_[size];
 };
