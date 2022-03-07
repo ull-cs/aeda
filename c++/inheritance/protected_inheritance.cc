@@ -16,17 +16,20 @@ class Base {
   int private_ = 1;
 };
 
-class PublicDerived : public Base {
+class ProtectedDerived : protected Base {
  public:
   int getProtected() {
     return protected_;
   }
+  int getPublic() {
+    return public_;
+  }
 };
 
 int main() {
-  PublicDerived object;
-  cout << "Private = " << object.getPrivate() << endl;
+  ProtectedDerived object;
+  cout << "Private cannot be accessed." << endl;
   cout << "Protected = " << object.getProtected() << endl;
-  cout << "Public = " << object.public_ << endl;
+  cout << "Public = " << object.getPublic() << endl;
   return 0;
 }
