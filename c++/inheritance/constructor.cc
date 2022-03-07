@@ -6,7 +6,6 @@ class Person {
   Person(const std::string& name = "", int age = 0)
       : m_name{name}, m_age{age} {
   }
-
   const std::string& getName() const { return m_name; }
   int getAge() const { return m_age; }
 
