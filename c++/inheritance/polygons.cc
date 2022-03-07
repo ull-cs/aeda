@@ -17,14 +17,14 @@ class Polygon {
 class Rectangle : public Polygon {
  public:
   int area() {
-    return width_ * height_;
+    return (width_ * height_);
   }
 };
 
 class Triangle : public Polygon {
  public:
   int area() {
-    return width_ * height_ / 2;
+    return (width_ * height_) / 2;
   }
 };
 
