@@ -3,10 +3,9 @@
 using namespace std;
 
 class Unique final {
-
  public:
   void display() {
-   cout << "My unique class" << endl;
+    cout << "My unique class" << endl;
   }
 };
 
@@ -18,7 +17,6 @@ class Unique final {
 
 int main() {
   Unique object;
-  object.display(); 
+  object.display();
   return 0;
 }
-
