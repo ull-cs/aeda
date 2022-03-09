@@ -4,18 +4,18 @@ using namespace std;
 
 class Unique{
  public:
-	static Unique*  GetInstance(){
-		return new Unique();
-	}	
-	void Display() {
-		cout<<" My Unique Class"<<endl; 
-        }
+  static Unique* GetInstance() {
+    return new Unique();
+  }	
+  void Display() {
+    cout << "My Unique Class" << endl; 
+  }
  private:
-	Unique() { }
+  Unique() { }
 }; 
 
 int main(){ 
   Unique *u = Unique::GetInstance(); 
-  u->Display();		
+  u->Display();
   return 0;
 }
