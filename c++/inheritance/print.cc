@@ -1,7 +1,6 @@
-// C++ program to demonstrate the use of virtual function
-
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 class Animal {
