@@ -12,6 +12,7 @@ class Stack {
   int peek();
   int pop();
   void push(int toInsert);
+  void print();
 
  private:
   static const int max = 100;
@@ -64,11 +65,20 @@ void Stack::push(int toInsert) {
   data[top] = toInsert;
 }
 
+void Stack::print() {
+  cout << "Stack: ";
+  for (int i = 0; i <= top; i++) {
+    cout << data[i] << " ";
+  }
+  cout << endl;
+}
+
 class SpecialStack : public Stack {
  public:
   int pop();
   void push(int toInsert);
   int getMin();
+  void print();
 
  private:
   Stack min;
@@ -102,6 +112,11 @@ int SpecialStack::getMin() {
   return element;
 }
 
+void SpecialStack::print() {
+  Stack::print();
+  min.print();
+}
+
 int main(int argc, char* argv[]) {
   const int kElements = stoi(argv[1]);
   srand(time(NULL));
@@ -110,6 +125,7 @@ int main(int argc, char* argv[]) {
     const int randomNumber = rand() % 10 + 1;
     stack.push(randomNumber);
     cout << randomNumber << " has been pushed" << endl;
+    stack.print();
   }
   cout << "Elements present in stack: ";
   while (!stack.isEmpty()) {
