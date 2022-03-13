@@ -4,21 +4,18 @@
 using namespace std;
 
 bool hasDuplicateParenthesis(string expression) {
-  if (expression.length() <= 3) {
-    return false;
-  }
   // take an empty stack of characters
   stack<char> stack;
   // traverse the input expression
   for (char character : expression) {
+    cout << character << endl;
     // if the current char in the expression is not a closing parenthesis
     if (character != ')') {
       stack.push(character);
     }
     // if the current char in the expression is a closing parenthesis
     else {
-      // if the stack's top element is an opening parenthesis,
-      // the subexpression of the form ((exp)) is found
+      // if the stack's top element is an opening parenthesis, the subexpression of the form ((exp)) is found
       if (stack.top() == '(') {
         return true;
       }
