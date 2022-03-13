@@ -7,7 +7,7 @@ int main() {
   try {
     myvector.at(20) = 100;
   } catch (const std::out_of_range& oor) {
-    std::cerr << "Out of Range error: " << oor.what() << '\n';
+    std::cerr << "Out of Range error: " << oor.what() << std::endl;
   }
   return 0;
 }
