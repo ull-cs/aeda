@@ -12,9 +12,9 @@ int main() {
       else
         throw 'exception';       // throwing a character as exception
     } catch (const int value) {  // to catch numeric exceptions
-      cout << "Integer exception with value " << value << endl;
+      cerr << "Integer exception with value " << value << endl;
     } catch (const char character) {  // to catch character/string exceptions
-      cout << "Character exception with value " << value << endl;
+      cerr << "Character exception with value " << value << endl;
     }
   }
 }

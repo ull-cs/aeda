@@ -39,11 +39,11 @@ int main() {
   try {
     SomeFunction();
   } catch (MyException& exception) {
-    std::cout << exception.what() << std::endl;
-    std::cout << "File: " << exception.file() << std::endl;
-    std::cout << "Function: " << exception.function() << std::endl;
-    std::cout << "Line: " << exception.line() << std::endl;
-    std::cout << "Message: " << exception.msg() << std::endl;
+    std::cerr << exception.what() << std::endl;
+    std::cerr << "File: " << exception.file() << std::endl;
+    std::cerr << "Function: " << exception.function() << std::endl;
+    std::cerr << "Line: " << exception.line() << std::endl;
+    std::cerr << "Message: " << exception.msg() << std::endl;
   }
   return 0;
 }

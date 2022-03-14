@@ -4,7 +4,7 @@ using namespace std;
 
 double Calculator(double a, double b) {
   if (a == b) {
-    cout << "Exit(1)!" << endl;
+    cerr << "Exit(1)!" << endl;
     exit(1);
   }
   return 1 / (a - b);
