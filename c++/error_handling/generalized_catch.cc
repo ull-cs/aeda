@@ -12,7 +12,7 @@ int main() {
       else
         throw 'exception';  // throwing a character as exception
     } catch (...) {         // generalised catch block
-      cout << "Special exception" << endl;
+      cerr << "Special exception" << endl;
     }
   }
   return 0;
