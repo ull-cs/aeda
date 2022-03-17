@@ -4,46 +4,47 @@
 using namespace std;
 
 class Shape {
-  string s_name;
-
  public:
-  Shape(string name) : s_name(name) {}
+  Shape(string name) : name_(name) {}
   virtual void GetInfo() {
-    cout << s_name << endl;
+    cout << name_ << endl;
   }
+
+ private:
+  string name_;
 };
 
 class Square : public Shape {
  public:
   Square(string S_name, int value)
-      : Shape(S_name), side(value) {}
+      : Shape(S_name), side_(value) {}
   void GetInfo() {
-    cout << "Area of the square is: " << side * side << endl;
+    cout << "Area of the square is: " << side_ * side_ << endl;
   }
 
  private:
-  int side;
+  int side_;
 };
 
 class Rectangle : public Shape {
  public:
-  Rectangle(string S_name, int len, int wid)
-      : Shape(S_name), length(len), width(wid) {}
+  Rectangle(string S_name, int length, int width)
+      : Shape(S_name), length_(length), width_(width) {}
   void GetInfo() {
-    cout << "Area of the rectangle is: " << length * width << endl;
+    cout << "Area of the rectangle is: " << length_ * width_ << endl;
   }
 
  private:
-  int length;
-  int width;
+  int length_;
+  int width_;
 };
 
-Shape* CreateSquare(string S_name, int value) {
-  return new Square(S_name, value);
+Shape* CreateSquare(string name, int value) {
+  return new Square(name, value);
 }
 
-Rectangle* CreateRectangle(string S_name, int len, int wid) {
-  return new Rectangle(S_name, len, wid);
+Rectangle* CreateRectangle(string name, int length, int width) {
+  return new Rectangle(name, length, width);
 }
 
 int main() {
@@ -63,4 +64,5 @@ int main() {
   if (square1 == NULL) {
     cout << "Invalid casting." << endl;
   }
+  return 0;
 }

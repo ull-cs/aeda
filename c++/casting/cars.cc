@@ -4,7 +4,7 @@ using namespace std;
 
 class BaseCar {
  public:
-  BaseCar(){};
+  BaseCar() {};
   virtual void WhoAreYou() {
     cout << "I am BaseCar" << endl;
   };
@@ -12,7 +12,7 @@ class BaseCar {
 
 class FirstModel : public BaseCar {
  public:
-  FirstModel(){};
+  FirstModel() {};
   virtual void WhoAreYou() {
     cout << "I am a FirstModel car" << endl;
   };
@@ -23,7 +23,7 @@ class FirstModel : public BaseCar {
 
 class SecondModel : public FirstModel {
  public:
-  SecondModel(){};
+  SecondModel() {};
   void WhoAreYou() {
     cout << "I am the SecondModel car" << endl;
   };
