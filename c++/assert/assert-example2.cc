@@ -18,6 +18,7 @@
  */
 
 #include <iostream>
+
 // uncomment next line to disable assert()
 //#define NDEBUG // it must be above #include <assert.h>
 
@@ -25,7 +26,7 @@
  
 // Use (void) to silent unused warnings.
 #define assertm(exp, msg) assert(((void)msg, exp))
- 
+
 int main() {
   assert(2 + 2 == 4);
   std::cout << "Execution continues past the first assert" << std::endl;
