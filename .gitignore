@@ -6,3 +6,6 @@
 
 # Unignore all dirs
 !*/
+
+# Ignore executables
+*.out
