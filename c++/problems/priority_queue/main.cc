@@ -31,7 +31,8 @@ int main(int argc, char* argv[]) {
   for (int i = 0; i < kElements; i++) {
     const int randomNumber = rand() % 100 + 1;
     const int randomPriority = rand() % 10 + 1;
-    queue.enqueue(randomNumber, randomPriority);
+    Element newElement{randomNumber, randomPriority};
+    queue.enqueue(newElement);
     cout << randomNumber << " with priority " << randomPriority << " has been queued" << endl;
   }
   cout << endl;

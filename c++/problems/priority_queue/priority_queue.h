@@ -1,7 +1,7 @@
 #ifndef PRIORITY_QUEUE
 #define PRIORITY_QUEUE
 
-#include "queue_element.h"
+#include "element.h"
 #include <iostream>
 
 #define MAX 1000
@@ -11,7 +11,7 @@ using namespace std;
 class PriorityQueue {
  public:
   PriorityQueue();
-  void enqueue(int value, int priority);
+  void enqueue(const Element&);
   Element peek();
   void dequeue();
   bool isEmpty();

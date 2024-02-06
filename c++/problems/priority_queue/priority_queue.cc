@@ -6,9 +6,9 @@ PriorityQueue::PriorityQueue() {
   size = 0;
 }
 
-void PriorityQueue::enqueue(int value, int priority) {
-  elements[size].value = value;
-  elements[size].priority = priority;
+void PriorityQueue::enqueue(const Element& toInsert) {
+  elements[size].value = toInsert.value;
+  elements[size].priority = toInsert.priority;
   size++;  
 }
 
