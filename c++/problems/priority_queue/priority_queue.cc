@@ -13,15 +13,13 @@ void PriorityQueue::enqueue(int value, int priority) {
 }
 
 Element PriorityQueue::peek() {
-  int highestPriorityIndex = indexElementWithHighestPriority();
+  const int highestPriorityIndex = indexElementWithHighestPriority();
   return elements[highestPriorityIndex];
 }
 
 void PriorityQueue::dequeue() {
   const int highestPriorityIndex = indexElementWithHighestPriority();
-  for (int i = highestPriorityIndex; i < size - 1; i++) {
-    elements[i] = elements[i + 1];
-  }
+  elements[highestPriorityIndex] = elements[size - 1];
   size--;
 }
 

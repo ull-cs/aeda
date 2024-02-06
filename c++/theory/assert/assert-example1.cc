@@ -25,7 +25,7 @@
 #include <iostream>
 
 // uncomment next line to disable assert()
-//#define NDEBUG // it must be above #include <assert.h>
+#define NDEBUG // it must be above #include <assert.h>
 
 #include <assert.h>
 
