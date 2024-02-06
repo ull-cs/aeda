@@ -7,19 +7,19 @@ PriorityQueue::PriorityQueue() {
 }
 
 void PriorityQueue::enqueue(int value, int priority) {
-  size++;
   elements[size].value = value;
   elements[size].priority = priority;
+  size++;  
 }
 
-int PriorityQueue::peek() {
-  const int index = indexElementWithHighestPriority();
-  return elements[index].value;
+Element PriorityQueue::peek() {
+  int highestPriorityIndex = indexElementWithHighestPriority();
+  return elements[highestPriorityIndex];
 }
 
 void PriorityQueue::dequeue() {
-  const int index = indexElementWithHighestPriority();
-  for (int i = index; i < size; i++) {
+  const int highestPriorityIndex = indexElementWithHighestPriority();
+  for (int i = highestPriorityIndex; i < size - 1; i++) {
     elements[i] = elements[i + 1];
   }
   size--;
@@ -34,16 +34,11 @@ int PriorityQueue::getSize() {
 }
 
 int PriorityQueue::indexElementWithHighestPriority() {
-  int highestPriority = -999999;
-  int index = -1;
-  for (int i = 0; i <= size; i++) {
-    if (highestPriority == elements[i].priority && index > -1 && elements[index].value < elements[i].value) {
-      highestPriority = elements[i].priority;
-      index = i;
-    } else if (highestPriority < elements[i].priority) {
-      highestPriority = elements[i].priority;
-      index = i;
+  int highestPriorityIndex = 0;
+  for (int i = 1; i < size; i++) {
+    if (elements[i].priority > elements[highestPriorityIndex].priority) {
+      highestPriorityIndex = i;
     }
   }
-  return index;
+  return highestPriorityIndex;
 }

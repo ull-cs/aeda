@@ -1,4 +1,4 @@
-struct queue_element {
+struct Element {
   int value;
   int priority;
 };

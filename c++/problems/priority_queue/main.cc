@@ -1,5 +1,4 @@
 #include <stdlib.h>
-
 #include <iostream>
 
 #include "priority_queue.h"
@@ -18,7 +17,7 @@ void Usage(int argc, char* argv[]) {
   } else {
     std::cout << "El programa requiere un parámetro." << std::endl;
     std::cout << "Modo de uso:" << std::endl;
-    std::cout << argv[0] << " NUMERO" << std::endl;
+    std::cout << argv[0] << " NUMERO_DE_ELEMENTOS" << std::endl;
     std::cout << "Pruebe " << argv[0] << " --help para más información" << std::endl;
     exit(EXIT_FAILURE);
   }
@@ -35,10 +34,11 @@ int main(int argc, char* argv[]) {
     queue.enqueue(randomNumber, randomPriority);
     cout << randomNumber << " with priority " << randomPriority << " has been queued" << endl;
   }
+  cout << endl;
   cout << "Elements present in queue: " << endl;
   while (!queue.isEmpty()) {
-    const int element = queue.peek();
-    cout << element << " has the highest priority" << endl;
+    const Element element = queue.peek();
+    cout << element.value << " has the highest priority (" << element.priority << ")" << endl;
     queue.dequeue();
   }
   return 0;
