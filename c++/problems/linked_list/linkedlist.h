@@ -100,15 +100,13 @@ void LinkedList<T>::displayAll() {
     cout << "Linked list is empty" << endl;
     return;
   }
-  cout << endl
-       << "----Link list items------" << endl;
+  cout << endl << "----Link list items------" << endl;
   Node<T> *temp = head;
   while (temp != NULL) {
     cout << temp->data << " | ";
     temp = temp->next;
   }
-  cout << endl
-       << "--------------------------" << endl;
+  cout << endl << "--------------------------" << endl;
 }
 
 template <typename T>

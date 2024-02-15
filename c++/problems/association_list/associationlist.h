@@ -94,15 +94,13 @@ void AssociationList<T>::displayAll() {
     cout << "List is empty" << endl;
     return;
   }
-  cout << endl
-       << "----List items------" << endl;
+  cout << endl << "----List items------" << endl;
   Node<T> *temp = head;
   while (temp != NULL) {
     cout << temp->data << " | ";
     temp = temp->next;
   }
-  cout << endl
-       << "--------------------------" << endl;
+  cout << endl << "--------------------------" << endl;
 }
 
 template <typename T>
