@@ -53,6 +53,7 @@ void Func() {
   double c = vector1 * vector2;  // calls operator*(vector1, vector2)
                                  // since c is built-in type, assignment operator
                                  // does not require function call
+  std::cout << c << std::endl;
 }
 
 int main() {

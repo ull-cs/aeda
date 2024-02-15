@@ -1,7 +1,5 @@
 #include <stdlib.h>
-
 #include <iostream>
-
 #include "associationlist.h"
 #include "pair.h"
 

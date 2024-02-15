@@ -27,12 +27,20 @@ class Human {
     return kindness_ < other.kindness_;
   }
 
- private:
+ public:
   int kindness_ = 100;
 };
 
 int main() {
-  std::vector<Human> humans = {Human{0}, Human{10}};
+  std::vector<Human> humans = {
+    Human(20), 
+    Human{0}, 
+    Human(15), 
+    Human{10}
+  };
   std::sort(humans.begin(), humans.end());
+  for (int i = 0; i < humans.size(); i++) {
+    std::cout << humans[i].kindness_ << std::endl;
+  }
   return 0;
 }

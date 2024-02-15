@@ -47,7 +47,7 @@ int main() {
   Pair<int> myPair(100, 75);
   cout << "Maximum: " << myPair.GetMax() << endl;
   Pair<char> charPair('a', 'b');
-  // cout << "Char pair: " << charPair.GetMax() << endl; // compilation error
+  //cout << "Char pair: " << charPair.GetMax() << endl; // compilation error
   cout << "Char pair: " << charPair.ToString() << endl;
   return 0;
 }
