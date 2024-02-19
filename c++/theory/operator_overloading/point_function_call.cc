@@ -10,6 +10,9 @@ class Point {
     y += dy;
     return *this;
   }
+  void Print() {
+    cout << "(" << x << "," << y << ")" << endl;
+  }
 
  private:
   int x;
@@ -17,8 +20,13 @@ class Point {
 };
 
 int main() {
-  Point pt;
+  Point point;
   // Offset this coordinate x with 3 points and coordinate y with 2 points.
-  pt(3, 2);
+  point(3, 2)
+  cout << "Point: ";
+  point.Print();
+  point(5, 9)(-14, 27)(8, 3);
+  cout << "Point: ";
+  point.Print();
   return 0;
 }
