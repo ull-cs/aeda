@@ -21,12 +21,11 @@ void SpecialStack::push(int toInsert) {
     min.push(toInsert);
   } else {
     Stack::push(toInsert);
-    int y = min.pop();
-    min.push(y);
-    if (toInsert < y) {
+    int currentTop = min.peek();
+    if (toInsert < currentTop) {
       min.push(toInsert);
     } else {
-      min.push(y);
+      min.push(currentTop);
     }
   }
 }
@@ -38,9 +37,8 @@ int SpecialStack::pop() {
 }
 
 int SpecialStack::getMin() {
-  int element = min.pop();
-  min.push(element);
-  return element;
+  int elementWithMinimumValue = min.peek();
+  return elementWithMinimumValue;
 }
 
 void SpecialStack::print() {

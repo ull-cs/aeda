@@ -35,8 +35,8 @@ int main(int argc, char *argv[]) {
   }
   cout << "Elements present in stack: ";
   while (!stack.isEmpty()) {
-    cout << stack.peek() << " (min=" << stack.getMin() << ") ";
-    stack.pop();
+    int topElement = stack.pop();
+    cout << topElement << " (min=" << stack.getMin() << ") ";
   }
   cout << endl;
   return 0;
