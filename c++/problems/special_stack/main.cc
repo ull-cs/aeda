@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <iostream>
-#include "queue.h"
+#include "special_stack.h"
 
 using namespace std;
 
-const std::string kHelpText = "Este programa toma como parámetro un número y crea una cola con dicho número de elementos para luego vaciarla";
+const std::string kHelpText = "Este programa toma como parámetro un número y crea una pila especial con dicho número de elementos para luego vaciarla";
 
 void Usage(int argc, char *argv[]) {
   if (argc == 2) {
@@ -26,16 +26,17 @@ int main(int argc, char *argv[]) {
   Usage(argc, argv);
   const int kElements = stoi(argv[1]);
   srand(time(NULL));
-  Queue<int> queue;
+  SpecialStack stack;
   for (int i = 0; i < kElements; i++) {
     const int randomNumber = rand() % 10 + 1;
-    queue.push(randomNumber);
+    stack.push(randomNumber);
     cout << randomNumber << " has been pushed" << endl;
+    stack.print();
   }
-  cout << "Elements present in queue: ";
-  while (!queue.isEmpty()) {
-    cout << queue.peek() << " ";
-    queue.pop();
+  cout << "Elements present in stack: ";
+  while (!stack.isEmpty()) {
+    cout << stack.peek() << " (min=" << stack.getMin() << ") ";
+    stack.pop();
   }
   cout << endl;
   return 0;
