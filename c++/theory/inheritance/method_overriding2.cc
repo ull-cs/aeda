@@ -17,7 +17,8 @@ class Derived : public Base {
 };
 
 int main() {
-  Derived derived1, derived2;
+  Derived derived1;
+  Derived derived2;
   derived1.print();
   derived2.Base::print();
   return 0;
